@@ -7,8 +7,10 @@ const TestTable = () => {
     const excelDownload = () => {
         const ExcelJSWorkbook = new ExcelJS.Workbook();
         // addWorksheet : 엑셀시트 생성
-        ExcelJSWorkbook.addWorksheet('test1');
-        ExcelJSWorkbook.addWorksheet('test2');
+        const worksheet = ExcelJSWorkbook.addWorksheet('test1');
+
+        // mergeCells : A2 ~ I2 셀 병합
+        worksheet.mergeCells("A2:I2");
 
         ExcelJSWorkbook.xlsx.writeBuffer().then(function (buffer) {
             saveAs(
