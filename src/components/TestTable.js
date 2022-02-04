@@ -6,7 +6,9 @@ const TestTable = () => {
 
     const excelDownload = () => {
         const ExcelJSWorkbook = new ExcelJS.Workbook();
-        ExcelJSWorkbook.addWorksheet('test'); // 엑셀 시트명
+        // addWorksheet : 엑셀시트 생성
+        ExcelJSWorkbook.addWorksheet('test1');
+        ExcelJSWorkbook.addWorksheet('test2');
 
         ExcelJSWorkbook.xlsx.writeBuffer().then(function (buffer) {
             saveAs(
